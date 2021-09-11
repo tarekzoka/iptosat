@@ -1,90 +1,96 @@
-#!/bin/bash
-# 
---------------------------------------------------------------------------------------
-# ###########################################
-# SCRIPT : DOWNLOAD AND INSTALL IPtoSAT
-# ###########################################
-#
-# Command: wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -qO - | /bin/sh
-#
-# ###################
-echo ' welcome to install iptosat '
-=======================
-============================
-=================================
-# Configure where we can find things here #
-TMPDIR='/tmp'
-VERSION='1.8'
-PACKAGE='enigma2-plugin-extensions-iptosat'
-MY_URL='https://raw.githubusercontent.com/tarekzoka/iptosat/main/'
---------------------------------------------------------------------------------------
+  
+#!/bin/sh
 
-####################
-#  Image Checking  #
-if which opkg > /dev/null 2>&1; then
-    STATUS='/var/lib/opkg/status'
-@@ -32,13 +38,12 @@ fi
+# ==============================================
+# SCRIPT : DOWNLOAD AND INSTALL JediMakerXtream #
+# =====================================================================================================================
+# Command: wget https://raw.githubusercontent.com/biko-73/JediMakerXtream/main/installer.sh -O - | /bin/sh #
+# =====================================================================================================================
 
-##################################
-# Remove previous files (if any) #
-rm -rf $TMPDIR/${PACKAGE}*
-rm -rf $TMPDIR/"${PACKAGE:?}"* > /dev/null 2>&1
+########################################################################################################################
+# Plugin	... Enter Manually
+########################################################################################################################
 
-######################
-#  Remove Old Plugin #
-if grep -qs "Package: $PACKAGE" $STATUS ; then
-    echo ""
-    echo "Remove old version..."
-    echo "   >>>>   Remove old version   <<<<"
-    if [ $OSTYPE = "Opensource" ]; then
-        $OPKGREMOV $PACKAGE
-        echo ""
-@@ -49,7 +54,7 @@ if grep -qs "Package: $PACKAGE" $STATUS ; then
-        sleep 2; clear
-    fi
+PACKAGE_DIR='JediMakerXtream/main'
+MY_IPK="enigma2-plugin-extensions-jedimakerxtream_6.18_all.ipk"
+MY_DEB="enigma2-plugin-extensions-jedimakerxtream_6.18_all.deb"
+
+
+########################################################################################################################
+# Auto ... Do not change
+########################################################################################################################
+
+# Decide : which package ?
+MY_MAIN_URL="https://raw.githubusercontent.com/biko-73/"
+if which dpkg > /dev/null 2>&1; then
+	MY_FILE=$MY_DEB
+	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
 else
-    echo "No older version was found on the device... "
-    echo "   >>>>   No Older Version Was Found   <<<<"
-    sleep 1
-    echo ""; clear
+	MY_FILE=$MY_IPK
+	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_IPK
 fi
-@@ -127,28 +132,30 @@ fi
-###################
-#  Install Plugin #
-if [ $OSTYPE = "Opensource" ]; then
-    echo "Downloading And Insallling IPtoSAT plugin Please Wait ......"
-    echo "Insallling IPtoSAT plugin Please Wait ......"
-    wget $MY_URL/${PACKAGE}_${VERSION}_all.ipk -qP $TMPDIR
-    $OPKGINSTAL $TMPDIR/${PACKAGE}_${VERSION}_all.ipk
+MY_TMP_FILE="/tmp/"$MY_FILE
+
+echo ''
+echo '************************************************************'
+echo '**                         STARTED                        **'
+echo '************************************************************'
+echo "**                 Uploaded by: Biko_73                   **"
+echo "**  https://www.tunisia-sat.com/forums/threads/3898738/   **"
+echo "************************************************************"
+echo ''
+
+# Remove previous file (if any)
+rm -f $MY_TMP_FILE > /dev/null 2>&1
+
+# Download package file
+MY_SEP='============================================================='
+echo $MY_SEP
+echo 'Downloading '$MY_FILE' ...'
+echo $MY_SEP
+echo ''
+wget -T 2 $MY_URL -P "/tmp/"
+
+# Check download
+if [ -f $MY_TMP_FILE ]; then
+	# Install
+	echo ''
+	echo $MY_SEP
+	echo 'Installation started'
+	echo $MY_SEP
+	echo ''
+	if which dpkg > /dev/null 2>&1; then
+		apt-get install --reinstall $MY_TMP_FILE -y
+	else
+		opkg install --force-reinstall $MY_TMP_FILE
+	fi
+	MY_RESULT=$?
+
+	# Result
+	echo ''
+	echo ''
+	if [ $MY_RESULT -eq 0 ]; then
+		echo "   >>>>   SUCCESSFULLY INSTALLED   <<<<"
+		echo ''
+		echo "   >>>>         RESTARING         <<<<"
+		if which systemctl > /dev/null 2>&1; then
+			sleep 2; systemctl restart enigma2
+		else
+			init 4; sleep 4; init 3;
+		fi
+	else
+		echo "   >>>>   INSTALLATION FAILED !   <<<<"
+	fi;
+	echo ''
+	echo '**************************************************'
+	echo '**                   FINISHED                   **'
+	echo '**************************************************'
+	echo ''
+	exit 0
 else
-    echo "Downloading And Insallling IPtoSAT plugin Please Wait ......"
-    echo "Insallling IPtoSAT plugin Please Wait ......"
-    wget $MY_URL/${PACKAGE}_${VERSION}.deb -qP $TMPDIR
-    $DPKINSTALL $TMPDIR/${PACKAGE}_${VERSION}.deb; $OPKGINSTAL -f -y
+	echo ''
+	echo "Download failed !"
+	exit 1
 fi
 
-##################################
-# Remove previous files (if any) #
-rm -rf $TMPDIR/${PACKAGE}*
-rm -rf $TMPDIR/"${PACKAGE:?}"* > /dev/null 2>&1
-
-sleep 1; clear
-echo ""
-echo "***********************************************************************"
-echo "**                                                                    *"
-echo "**  Welcome IPtoSAT    : $VERSION                             *"
-echo "** Uploaded by: tarekzoka                      *"
-echo "**                       Develop by : ZAKARIYA KHA                    *"
-echo "===================================================================================================================="
-echo "**                                                                    *"
-echo "welcome to iptosat"
-echo "**            IPtoSAT $VERSION *"  
-echo "=================
-=============================
-=================================="                 
-echo "**    Uploaded by: tarekzoka    *"               
-echo "** "                                                               
-echo ".  WELCOME TO PLUGIN IPTOSAT "
-echo ""
-
-exit 0
+# ------------------------------------------------------------------------------------------------------------
