@@ -1,6 +1,6 @@
 #!/bin/bash
 # ###########################################
-# SCRIPT : DOWNLOAD AND INSTALL IPtoSAT
+# SCRIPT : DOWNLOAD AND INSTALL iptosat
 # ###########################################
 #
 # Command: wget wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -qO - | /bin/sh
