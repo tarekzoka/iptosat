@@ -3,7 +3,7 @@
 # SCRIPT : DOWNLOAD AND INSTALL IPtoSAT
 # ###########################################
 #
-# Command: wget wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -qO - | /bin/sh
+# Command:  wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -qO - | /bin/sh
 #
 # ###################
 echo ' welcome to install iptosat '
