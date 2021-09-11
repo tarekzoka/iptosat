@@ -2,18 +2,18 @@
 #!/bin/sh
 
 # ==============================================
-# SCRIPT : DOWNLOAD AND INSTALL JediMakerXtream #
+# SCRIPT : DOWNLOAD AND INSTALL iptosat #
 # =====================================================================================================================
-# Command: wget https://raw.githubusercontent.com/biko-73/JediMakerXtream/main/installer.sh -O - | /bin/sh #
+# Command: wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -O - | /bin/sh #
 # =====================================================================================================================
 
 ########################################################################################################################
 # Plugin	... Enter Manually
 ########################################################################################################################
 
-PACKAGE_DIR='JediMakerXtream/main'
-MY_IPK="enigma2-plugin-extensions-jedimakerxtream_6.18_all.ipk"
-MY_DEB="enigma2-plugin-extensions-jedimakerxtream_6.18_all.deb"
+PACKAGE_DIR='iptosat/main'
+MY_IPK="enigma2-plugin-extensions-iptosat_1.8_all"
+MY_DEB="enigma2-plugin-extensions-iptosat_1.8.deb"
 
 
 ########################################################################################################################
@@ -21,7 +21,7 @@ MY_DEB="enigma2-plugin-extensions-jedimakerxtream_6.18_all.deb"
 ########################################################################################################################
 
 # Decide : which package ?
-MY_MAIN_URL="https://raw.githubusercontent.com/biko-73/"
+MY_MAIN_URL="https://raw.githubusercontent.com/tarekzoka/"
 if which dpkg > /dev/null 2>&1; then
 	MY_FILE=$MY_DEB
 	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
