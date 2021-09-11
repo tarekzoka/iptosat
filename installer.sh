@@ -152,7 +152,7 @@ echo "**            IPtoSAT $VERSION *"
 echo "=================
 =============================
 =================================="                 
-echo "**    Uploaded by:     EMIL_NABIL    *"               
+echo "**    Uploaded by:     tarekzoka    *"               
 echo "** "                                                               
 echo ".      WELCOME TO PLUGIN IPTOSAT "
 echo ""
