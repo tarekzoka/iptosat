@@ -13,7 +13,7 @@ echo "   =======================
 TMPDIR='/tmp'
 VERSION='1.8'
 PACKAGE='enigma2-plugin-extensions-iptosat'
-MY_URL='https://raw.githubusercontent.com/emilnabil/iptosat/main/'
+MY_URL='https://raw.githubusercontent.com/tarekzoka/iptosat/main/'
 
  echo " #################### "
 #  Image Checking  #
