@@ -1,6 +1,6 @@
 #!/bin/sh
 # ==============================================
-# SCRIPT : DOWNLOAD AND INSTALL JediMakerXtream #
+# SCRIPT : DOWNLOAD AND INSTALL iptosat #
 # =====================================================================================================================
 # Command: wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -O - | /bin/sh #
 # 
@@ -14,7 +14,7 @@ exit 0
 ########################################################################################################################
 # Plugin	... Enter Manually
 ########################################################################################################################
-PACKAGE_DIR='JediMakerXtream/main'
+PACKAGE_DIR='iptosat/main'
 MY_IPK="enigma2-plugin-extensions-iptosat_1.8_all.ipk"
 MY_DEB="enigma2-plugin-extensions-iptosat_1.8_all.deb"
 opkg install --force-overwrite  https://github.com/tarekzoka/JediMakerXtream/raw/main/enigma2-plugin-extensions-iptosat_1.8_all.ipk
