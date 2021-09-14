@@ -6,9 +6,11 @@
 # 
 opkg install --force-overwrite  https://github.com/tarekzoka/iptosatraw/main/enigma2-plugin-extensions-iptosat_1.8_all.ipk
 wait
-dpkg -i /tmp/*.ipk
+opkg -i /tmp/*.ipk
+opkg -i /tmp/*.deb
 wait
 opkg install --force-overwrite /tmp/*.ipk
+opkg install --force-overwrite /tmp/*.deb
 sleep 2;
 exit 0
 
