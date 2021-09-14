@@ -1,9 +1,9 @@
  #!/bin/sh
 # ###########################################
-# SCRIPT : DOWNLOAD AND INSTALL IPtoSAT
+# SCRIPT : DOWNLOAD AND INSTALL iptosat
 # ###########################################
 #
-# Command: wget wget https://raw.githubusercontent.com/tarekhanfy/IPtoSAT/main/IPtoSAT/installer.sh -qO - | /bin/sh
+# Command: wget wget https://raw.githubusercontent.com/tarekhanfy/iptosat/main/IPtoSAT/installer.sh -qO - | /bin/sh
 #
 # ###########################################
 
@@ -12,7 +12,7 @@
 TMPDIR='/tmp'
 VERSION='1.8'
 PACKAGE='enigma2-plugin-extensions-iptosat'
-MY_URL='https://raw.githubusercontent.com/tarekhanfy/IPtoSAT/main/IPtoSAT/'
+MY_URL='https://raw.githubusercontent.com/tarekhanfy/iptosat/main/IPtoSAT/'
 
 ####################
 #  Image Checking  #
