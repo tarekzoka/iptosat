@@ -1,13 +1,14 @@
+  
 #!/bin/sh
 # ###########################################
 # SCRIPT : DOWNLOAD AND INSTALL IPtoSAT
 # ###########################################
 #
 # Command: wget wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/IPtoSAT/installer.sh -qO - | /bin/sh
-
-
 #
 # ###########################################
+
+###########################################
 
 ###########################################
 # Configure where we can find things here #
