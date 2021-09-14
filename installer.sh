@@ -14,18 +14,3 @@ opkg install --force-overwrite /tmp/*.deb
 sleep 2;
 exit 0
 
-=====================================================================================================================
-
-########################################################################################################################
-# Plugin	... Enter Manually
-########################################################################################################################
-PACKAGE_DIR='iptosat/main'
-MY_IPK="enigma2-plugin-extensions-iptosat_1.8_all.ipk"
-MY_DEB="enigma2-plugin-extensions-iptosat_1.8_all.deb"
-opkg install --force-overwrite  https://github.com/tarekzoka/JediMakerXtream/raw/main/enigma2-plugin-extensions-iptosat_1.8_all.ipk
-wait
-
-opkg install --force-overwrite /tmp/*.ipk
-sleep 2;
-exit 0
-
