@@ -6,7 +6,7 @@
 wget -O /tmp/iptosat_1.8_all.ipk "https://github.com/tarekzoka/-xstreamity/raw/main/eenigma2-plugin-extensions-iptosat_1.8_all.ipk"
 wait
 #!/bin/sh
-opkg -i /tmp/*.ipk
+opkg -i-O /tmp/*.ipk
 wait
 dpkg -i --force-overwrite /tmp/*.ipk
 wait
