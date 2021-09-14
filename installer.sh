@@ -3,14 +3,13 @@
 # SCRIPT : DOWNLOAD AND INSTALL iptosat #
 # =====================================================================================================================
 # Command: wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -O - | /bin/sh #
-# 
-opkg install --force-overwrite  https://github.com/tarekzoka/iptosatraw/main/enigma2-plugin-extensions-iptosat_1.8_all.ipk
-wait
-opkg -i /tmp/*.ipk
-opkg -i /tmp/*.deb
+#!/bin/sh
+#
+
+wget -O /tmp/iptosat_1.8_all.ipk "https://github.com/tarekzoka/-xstreamity/raw/main/eenigma2-plugin-extensions-iptosat_1.8_all.ipk"
 wait
 opkg install --force-overwrite /tmp/*.ipk
-opkg install --force-overwrite /tmp/*.deb
+wait
 sleep 2;
-exit 0
+
 
