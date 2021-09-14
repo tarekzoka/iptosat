@@ -9,7 +9,7 @@ wget -O /tmp/iptosat_1.8_all.ipk "https://github.com/tarekzoka/-xstreamity/raw/m
 wait
 opkg install /tmp/*.ipk
 wait
-opkg install --force-overwrite /tmp/*.ipk
+opkg install --force-overwrite /var/volatile/tmp/*.ipk
 wait
 sleep 2;
 
