@@ -28,4 +28,4 @@ init 4
 init 3
 exit 0
 
-https://github.com/tarekzoka/iptosat/blob/main/enigma2-plugin-extensions-iptosat_1.8_all.ipk
+
