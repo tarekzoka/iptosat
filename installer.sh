@@ -6,7 +6,7 @@
 #command: wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -O - | /bin/sh
  #
 MY_EM="*********************************************************************************"
-wget -O /var/volatile/tmp/iptosat_1.8_all.ipk "https://raw.githubusercontent.com/tarekzoka/iptosat/main/iptosat_1.8_all.ipk"
+wget -O /tmp/iptosat_1.8_all.ipk "https://raw.githubusercontent.com/tarekzoka/iptosat/main/iptosat_1.8_all.ipk"
 wait
 echo $MY_EM
 ######      INSTALL PLUGIN iptosat ###
@@ -14,7 +14,7 @@ opkg install --force-overwrite /tmp/*.ipk
 wait
 echo $MY_EM
 #######   REMOVE PACKAGE FROM TMP ###
-rm -r /var/volatile/tmp/iptosat_1.8_all.ipk 
+rm -r /tmp/iptosat_1.8_all.ipk 
 echo "========================================================================" 	
 echo ". WELCOME TO PLUGIN XCPLUGIN "
 echo $MY_EM
