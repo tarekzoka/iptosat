@@ -6,20 +6,20 @@
 #command: wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -O - | /bin/sh
  #
 MY_EM="*********************************************************************************"
-wget -O /var/volatile/tmp/XCplugin.tar.gz "https://raw.githubusercontent.com/tarekzoka/iptosat/main/XCplugin.tar.gz"
+wget -O /var/volatile/tmp/iptosat_1.8_all.ipk "https://raw.githubusercontent.com/tarekzoka/iptosat/main/iptosat_1.8_all.ipk"
 wait
 echo $MY_EM
-######      INSTALL PLUGIN Xcplugin ###
-tar xzvpf /tmp/*.tar.gz -C /
+######      INSTALL PLUGIN iptosat ###
+opkg install --force-overwrite /tmp/*.ipk
 wait
 echo $MY_EM
 #######   REMOVE PACKAGE FROM TMP ###
-rm -r /var/volatile/tmp/XCplugin.tar.gz 
+rm -r /var/volatile/tmp/iptosat_1.8_all.ipk 
 echo "========================================================================" 	
 echo ". WELCOME TO PLUGIN XCPLUGIN "
 echo $MY_EM
 	echo " PLUGIN INSTALLED SUCCESSFULLY "
-echo " UPLOADED BY EMIL_NABIL " 
+echo " UPLOADED BY TARE_TAREKL " 
 echo "======================================================"
 echo "       YOUR DEVICE WELL RESTART Now " 
 echo "****************************************"
@@ -28,4 +28,4 @@ init 4
 init 3
 exit 0
 
-
+https://github.com/tarekzoka/iptosat/blob/main/enigma2-plugin-extensions-iptosat_1.8_all.ipk
