@@ -6,7 +6,7 @@
 #command: wget https://raw.githubusercontent.com/tarekzoka/iptosat/main/installer.sh -O - | /bin/sh
  #
 MY_EM="*********************************************************************************"
-wget -O /tmp/iptosat_1.8_all.ipk "https://raw.githubusercontent.com/tarekzoka/iptosat/main/iptosat_1.8_all.ipk"
+wget -O /tmp/iptosat_1.8_all.ipk "https://raw.githubusercontent.com/tarekzoka/iptosat/main/enigma2-plugin-extensions-iptosat_1.8_all.ipk"
 wait
 echo $MY_EM
 ######      INSTALL PLUGIN iptosat ###
